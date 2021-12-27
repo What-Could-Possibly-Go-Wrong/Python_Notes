@@ -1,0 +1,479 @@
+Function:
+	Print:
+		a='Hello'
+		print (a)
+			->'Hello'
+	
+		print (a , 'Ste')
+			->'Hello Ste'
+			
+		print (a + 'Ste')
+			-> 'HelloSte'
+			
+	int to string:
+		a=6
+		'Hello'+str(a)
+			-> 'Hello6'
+			
+	list to sting
+		A=['aaa','bbb','cc']
+		B = ':'.join(A)
+			->	A=['aaa','bbb','cc']
+			->	B='aaa:bbb:cc'
+			
+	string to list
+		A='www+eee+der'
+		B=A.split('+')
+			->B=['www','eee','der']
+			
+	Dictionary to list of tupels
+		d['a'] = 'alpha'
+		d['b'] = 'beta'
+		l = []
+		l = d.items()
+			-> d = {'a': 'alpha', 'b': 'beta'}
+			-> l = [('a','alpha),('b','beta)]
+	
+	Dividieren
+		a=7
+		a/2
+			-> 3
+		a/2.
+			->3.5
+	Modulo
+		a=7
+		7%2
+		->0.5
+Loop
+	if
+		if name == 'Alice':
+			print 'AliceMode'
+		
+		if name == 'Ste' or name == 'STE':
+			print 'Normal'
+		else:
+			print 'Not true'
+
+String
+	Nicht veränderbar
+		Index
+			a='Hello' 
+				H 	0 -5
+				e	1 -4
+				l	2 -3	
+				l	3 -2
+				o	4 -1
+			
+			a[0]
+				->H
+			a[4]
+				->o
+			a[-1]
+				->o
+			a[-5]
+				->H
+			a[1:3]
+				->el
+			a[:3]
+				->Hel
+			a[2:]
+				->llo
+			a[-3:]
+				->llo
+		Länge:
+			a='Hello'
+			len(a)
+				->5
+		Kleinschreibung
+			a='Hello'
+			b = a.lower()
+				-> b = 'hello'
+				-> a = 'Hello'
+		Find
+			a='Hello'
+			a.find('e')
+				-> 1
+		Formated String
+			'The sting %s and the number %d) %('Hello , 510)
+			-> 'The sting Hello and the number 510)
+		Ersetzen
+			s='Hello'
+			s.replace('l','*')
+			-> 'He**o'
+		
+Lists
+	Veränderbar
+		Format
+			a = [1,2,3]
+			b = []
+		Länge
+			a = [1,2,3,123]
+			len(a)
+				-> 4
+		Addieren
+			A=[1,2,3]
+			B=[4,5,6]
+			A+B
+				->[1,2,3,4,5,6]
+		Index
+			A=[33,22,11,0]
+			A[2]
+				-> 11
+			A[:-1]
+				->[33,22,11]
+		Vergleich
+			A=[1,2,3]
+			B=[1,2,3]
+			C=[2,3,4]
+			A==B
+				-> True
+			A==C
+				-> False
+		Loop over a list
+			A = [11,22,33]
+			For xxx in A:
+				print xxx
+				->	11
+					22
+					33
+		Anhängen
+			A = [11,22,33]
+			A.append(44)
+			-> Now A is [11,22,33,44]
+		Entfernen
+			A = [11,22,33]
+			A.pop(0)
+				->	11
+					A = [22,33]
+		Löschen
+			A = [11,22,33]
+			del A[1]
+				-> A = [11,33]
+			del A
+				-> A is not existing anymore
+		Sortieren
+			A = [11,33,22,44]
+			B = sorted(A)
+				-> A = [11,33,22,44]
+				-> B = [11,22,33,44]
+			B = sorted(A, reverse= True)
+				-> A = [11,33,22,44]
+				-> B = [44,33,22,11]
+			
+			A =['aaaa','bb','d','ccc']
+			B = sorted(A,key=len)
+				-> A =['aaaa','bb','d','ccc']
+				-> B =['d','bb','ccc','aaaa']
+			
+			A =['aaaz','bb','d','ccc']
+			def Last(s):
+				LC = s[-1]
+				return (LC)
+			B = sorted(A,key=Last)
+				->A =['aaaz','bb','d','ccc']
+				->B =['bb','ccc','d','aaaz']
+				
+			Liste erstellen
+				A = []
+				A = range(5)
+					-> A = [0,1,2,3,4]
+
+Tupel
+	Nicht veränderbar
+		Format
+			a = (1,2,3)
+		Länge
+			a = (1,2,3)
+			len(a)
+				-> 3
+		Indizieren
+			a[0]
+				-> 1
+Dictionary
+	Veränderbar
+		Format
+			d={}
+		New Entry
+			d['a'] = 'alpha'
+			-> {'a': 'alpha'}
+			
+			'a' is the key
+			'alpha' is the value
+			
+		Read
+			d['a'] = 'alpha'
+			d.get('a')
+			-> 'alpha'
+		
+		Read the keys
+			d['a'] = 'alpha'
+			d.keys()
+				-> ['a']
+		Read the values
+			d['a'] = 'alpha'
+			d.values()
+				-> ['alpha']
+		Loop over keys
+			d['a'] = 'alpha'
+			for k in d.keys():
+			
+			for k in sorted(d.keys()):
+			
+files
+	looping over every line
+		f = open(filename,'rU')
+		for line in f:	
+			print line,
+		f.close()
+
+	Read file to list
+		f = open(filename,'rU')
+		lines = f.readlines()
+		f.close()
+			-> lines = ['aaa\n','bbb\n']
+		
+	Read file to string
+		f = open(filename,'rU')
+		string= f.read()
+		f.close()
+	
+		
+regular expression
+	m = re.search(pattern,text)
+	m.group()
+	;seach for the first appearence of the pattern in the text
+	
+	Pattern palceholders
+	. any char
+	\w word char
+	\d digit
+	\s whitespace
+	\S non-whitespace
+	+ 1 or more
+	* 0 or more
+	[\w.] adds a dot to the charecters to search for
+	()() groups the result
+	
+	re.findall(pattern,text)
+	-> return a list with all results
+	
+	
+
+Import
+	sys
+		import sys
+			sys.argv
+				Argumente die beim Programmstart übergeben wurden
+
+	re	
+		regular expression	
+		import re
+
+	os
+		operating system
+			files and folders
+				os.listdir(.)
+					list with files&folders from the diretory where it is running
+				os.listdir(c:\)	
+					list with files&folders from c:\
+				
+				
+				name = sys.argv[1]
+				filenames = os.listdir(name)
+				for filename in filenames:
+					path = os.path.join(name, filename)		/makeing a valid path
+					print (path)
+					abspath = os.path.abspath(path)			/making a valid absolute path
+					print (abspath)	
+					
+			does a path exists?
+				os.path.exists('/something)
+					-> True or False
+			
+			Creat folder if it is not existing
+			if not (os.path.exists(CopyToDir)):
+				os.mkdir(CopyToDir) 		
+			
+	commands
+		shell commands
+			cmd = dir
+				(status,outputs) = commands.getstatusoutput(cmd)
+	
+	urllib
+		open a url
+			url = urllib.urlopen('http://google.com')
+		reading a url
+			url = urllib.urlopen('http://google.com')
+			url.read()
+		download to the folder where the script is executed
+			urllib.urlretrieve('http://google.com/something.gif' , abc.gif)
+	
+	matplotlib
+		data visialisation
+		import matplotlib.pyplot as plt
+		
+			Showing a graph x = 1 2 3   and y = 5 7 4
+				import matplotlib.pyplot as plt
+				
+				def main():
+					x = [1,2,3,]
+					y = [5,7,4]
+					plt.plot(x,y)
+					plt.show()
+					
+			Showing two graphs
+				import matplotlib.pyplot as plt
+				
+				def main():
+					x = [1,2,3,]
+					y = [5,7,4]
+					x2 = [1,2,3]
+					y2 = [12,10,18]
+					plt.plot(x,y,label = First line)
+					plt.plot(x2,y2,label = Secound line)
+					plt.show()
+					
+			Labels x,y,titel
+					plt.xlabel('Plot Number')
+					plt.ylabel('Imp var')
+					plt.title ('acb')
+					plt.title ('acb\nxyz')
+			
+			Plot bars
+					plt.bar(x,y,label = 'aaa')
+					plt.show()
+			Plot two bars
+					plt.bar(x,y,label = 'aaa',color='r')
+					plt.bar(x2,y2,label = 'bbb',color='c')
+					plt.show()
+			
+			Plot histogram
+					x=[]	-> a long list with data
+					bins=[]	-> how to group it e.g.: [0,10,20,30,40,50,60,70,80,90]
+					plt.hist(y,bins,rwidth=0.8)
+					plt.show()
+			
+			Plot scatter
+					x=[]
+					y=[]
+					plt.scatter(x,y)
+					plt.show()
+					
+			Plot stackplot
+					x  = [1,2,3,4,5]
+					
+					y1 = [4,5,3,2,1]
+					y2 = [2,2,3,4,4]
+					y3 = [4,3,4,4,5]
+					cols =['m','c','r','k']
+					plt.stackplot(x,y1,y2,y3, color=cols)
+					plt.show()
+			
+			Plot Piechart
+					slices = [12,3,10,20,15]
+					name = ['a',b','aaa','www',yas']
+					col = ['c','m','r','k']
+					
+					plt.pie(slices, labels=name, colors = col)
+					plt.show()
+			
+			Keywords
+					color, label, linewidth
+	csv
+		csv handling
+		import csv
+			with open(filename,'r') as csvfile:
+				plots = csv.reader(csvfile, delimiter = ',')    
+				plots.next()                                    #Skip first line
+				for row in plots:
+					x.append(int(row[0])                                                   
+					y.append(float(row[6]))
+					
+	numpy
+		reading data from file easyly
+			import matplotlib.pyplot as plt
+			import numpy as np
+			filename = 'something.txt'
+			def main():
+			
+				x,y =np.loadtxt(filename,delimiter=',',unpack=True)  ; must be float values
+				print (x)
+				print (y)
+				plt.plot(x,y)
+				plt.show()
+				
+	keyboard
+		Simulating the keyboard
+			keyboard.write('b',delay=0.2)
+			keyboard.send('space')
+			keyboard.send('enter')
+			keyboard.send(57)
+	
+	mouse
+		Simulating the mouse
+			mouse.move(10,10,absolute=False, duration=0.2)
+			mouse.press(button='left')
+			position = mouse.get_position()
+			print(position)
+
+	
+				
+German Keyboard Layout
+1	ESC
+14	BACKSPACE
+15	TAB
+28	ENTER
+29	STRGL
+42	SHIFTL
+54	SHIFTR
+56	ALT
+57	SPACE
+58	CAPS
+59	F1
+60	F2
+61	F3
+62	F4
+63	F5
+64	F6
+65	F7
+66	F8
+67	F9
+68	F10
+87	F11
+88	F12
+69	NUM
+82	NUM_0
+79	NUM_1
+80	NUM_2
+81	NUM_3
+75	NUM_4
+76	NUM_5
+77	NUM_6
+71	NUM_7
+72	NUM_8
+73	NUM_9
+156	NUM_ENTER
+83	NUM_,
+74	NUM_-
+78	NUM_+
+55	NUM_*
+70	SCROLL
+200	UP
+211	DELETE
+157	STRGR
+201	PAGEUP
+219	WINR
+220	WINL
+181	NUM_/
+203	LEFT
+221	APP
+183	PRINT
+184	ALTGR
+205	RIGHT
+NOT DEFINED	+
+197	PAUSE
+207	END
+199	POS1
+208	DOWN
+209	PAGEDOWN
+210	INSERT
